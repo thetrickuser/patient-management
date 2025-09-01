@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class PatientMapper {
 
-    public static PatientResponseDTO toPatientDTO(Patient patient) {
+    public static PatientResponseDTO toPatientResponseDTO(Patient patient) {
         PatientResponseDTO patientResponseDTO = new PatientResponseDTO();
         patientResponseDTO.setId(patient.getId().toString());
         patientResponseDTO.setName(patient.getName());
