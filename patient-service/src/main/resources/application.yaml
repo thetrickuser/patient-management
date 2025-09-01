@@ -4,19 +4,21 @@ server:
 spring:
   application:
     name: patient-service
-  h2:
-    console:
-      path: /h2-console
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: admin_viewer
-    password: password
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  sql:
-    init:
-      mode: always
+
+# UNCOMMENT TO USE INMEMORY DATABASE
+#  h2:
+#    console:
+#      path: /h2-console
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driver-class-name: org.h2.Driver
+#    username: admin_viewer
+#    password: password
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
+#  sql:
+#    init:
+#      mode: always
