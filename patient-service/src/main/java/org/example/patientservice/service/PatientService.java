@@ -7,6 +7,7 @@ import org.example.patientservice.mapper.PatientMapper;
 import org.example.patientservice.model.PatientRequestDTO;
 import org.example.patientservice.model.PatientResponseDTO;
 import org.example.patientservice.repository.PatientRepository;
+import org.example.patientservice.service.grpc.BillingServiceGrpcClient;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -17,9 +18,11 @@ import java.util.UUID;
 public class PatientService {
 
     private final PatientRepository patientRepository;
+    private final BillingServiceGrpcClient billingServiceGrpcClient;
 
-    public PatientService(PatientRepository patientRepository) {
+    public PatientService(PatientRepository patientRepository, BillingServiceGrpcClient billingServiceGrpcClient) {
         this.patientRepository = patientRepository;
+        this.billingServiceGrpcClient = billingServiceGrpcClient;
     }
 
     public List<PatientResponseDTO> getPatients() {
@@ -32,8 +35,9 @@ public class PatientService {
             throw new EmailAlreadyExistsException("A patient with this email " + requestDTO.getEmail() + " already exists");
         }
 
-        Patient patient = PatientMapper.toPatientEntity(requestDTO);
-        return PatientMapper.toPatientResponseDTO(patientRepository.save(patient));
+        Patient newPatient = patientRepository.save(PatientMapper.toPatientEntity(requestDTO));
+        billingServiceGrpcClient.createBillingAccount(newPatient.getId().toString(), newPatient.getName(), newPatient.getEmail());
+        return PatientMapper.toPatientResponseDTO(newPatient);
     }
 
     public PatientResponseDTO updatePatient(UUID id, PatientRequestDTO requestDTO) {
