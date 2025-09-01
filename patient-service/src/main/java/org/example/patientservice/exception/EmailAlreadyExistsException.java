@@ -1,4 +1,4 @@
-package org.example.exception;
+package org.example.patientservice.exception;
 
 public class EmailAlreadyExistsException extends RuntimeException {
     public EmailAlreadyExistsException(String message) {

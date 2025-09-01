@@ -1,6 +1,6 @@
-package org.example.repository;
+package org.example.patientservice.repository;
 
-import org.example.entity.Patient;
+import org.example.patientservice.entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.patientservice.model;
 
 public class PatientResponseDTO {
 

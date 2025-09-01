@@ -1,11 +1,11 @@
 ### PUT request to update new patient record
-PUT http://localhost:4000/patients/5f87f4e9-004f-4472-ade4-4d55a9630450
+PUT http://localhost:4000/patients/9671e9df-616d-4517-a20d-90dbce5a0a19
 Content-Type: application/json
 
 {
   "name": "Adhyan Das",
   "address": "New Address",
-  "email": "a@example.com",
+  "email": "b@example.com",
   "dateOfBirth": "1998-11-10"
 }
 

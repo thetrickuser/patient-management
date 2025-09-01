@@ -1,9 +1,9 @@
-package org.example.model;
+package org.example.patientservice.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import org.example.model.validators.CreatePatientValidationGroup;
+import org.example.patientservice.model.validators.CreatePatientValidationGroup;
 
 public class PatientRequestDTO {
 

@@ -1,4 +1,4 @@
-package org.example.entity;
+package org.example.patientservice.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

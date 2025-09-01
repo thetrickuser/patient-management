@@ -1,8 +1,8 @@
-package org.example.mapper;
+package org.example.patientservice.mapper;
 
-import org.example.entity.Patient;
-import org.example.model.PatientRequestDTO;
-import org.example.model.PatientResponseDTO;
+import org.example.patientservice.entity.Patient;
+import org.example.patientservice.model.PatientRequestDTO;
+import org.example.patientservice.model.PatientResponseDTO;
 
 import java.time.LocalDate;
 

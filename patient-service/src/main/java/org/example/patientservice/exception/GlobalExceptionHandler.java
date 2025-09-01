@@ -1,4 +1,4 @@
-package org.example.exception;
+package org.example.patientservice.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
